@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.hotel.mapper.HotelMapper">
+
+    <select id="getAllHotel" resultType="com.wzj.hotel.entity.Hotel">
+        SELECT * FROM hotel
+    </select>
+    <select id="getHotel" resultType="com.wzj.hotel.entity.Hotel" parameterType="int">
+        SELECT * FROM hotel limit #{page} , 10
+    </select>
+</mapper>
