@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Param;
 public interface UserInfoService {
     Result getUser(int page);
     Result getUserByName(@Param("realName") String realName);
+
 }
