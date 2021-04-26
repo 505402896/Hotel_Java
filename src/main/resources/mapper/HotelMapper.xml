@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.hotel.mapper.HotelMapper">
+
+    <select id="getAllHotel" resultType="com.wzj.hotel.entity.Hotel">
+        SELECT * FROM hotel
+    </select>
+    <select id="getHotel" resultType="com.wzj.hotel.entity.Hotel" parameterType="int">
+        SELECT * FROM hotel limit #{page} , 10
+    </select>
+    <insert id="addRoomType" parameterType="map">
+        INSERT INTO hotel VALUES(null,#{htype},#{hprice},#{hpic},#{hdetail},#{peopleNum},0)
+    </insert>
+    <update id="editRoomType" parameterType="map">
+        UPDATE hotel SET htype = #{htype},  hprice = #{hprice}, peopleNum = #{peopleNum} WHERE hid = #{hid}
+    </update>
+    <delete id="delRoomType" parameterType="int">
+        DELETE FROM hotel WHERE hid = #{hid}
+    </delete>
+    <select id="queryImgPath" resultType="java.lang.String" parameterType="int">
+        SELECT hpic FROM hotel WHERE hid = #{hid}
+    </select>
+</mapper>
