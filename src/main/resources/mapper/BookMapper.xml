@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.hotel.mapper.BookMapper">
+
+  <select id="getAllBook" resultType="com.wzj.hotel.entity.Book">
+    SELECT * FROM book
+  </select>
+  <select id="getBook" resultType="com.wzj.hotel.entity.Book" parameterType="int">
+    SELECT * FROM book limit #{page} , 10
+  </select>
+  <delete id="delBook" parameterType="int">
+    DELETE FROM book WHERE bid = #{bid}
+  </delete>
+  <select id="getBookById" resultType="com.wzj.hotel.entity.Book" parameterType="int">
+    SELECT * FROM book WHERE bid = #{bid}
+  </select>
+  <select id="getBookByRealName" resultType="com.wzj.hotel.entity.Book" parameterType="java.lang.String">
+    SELECT * FROM book WHERE realName = #{realName}
+  </select>
+</mapper>

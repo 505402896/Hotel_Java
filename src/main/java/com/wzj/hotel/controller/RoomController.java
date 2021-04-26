@@ -2,7 +2,6 @@ package com.wzj.hotel.controller;
 
 import com.wzj.hotel.service.RoomService;
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSON;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,5 +27,10 @@ public class RoomController {
   @RequestMapping(value = "/delRoom",method = RequestMethod.DELETE)
   public Result delRoom(@RequestBody JSONObject jsonObject){
     return roomService.delRoom(jsonObject);
+  }
+
+  @RequestMapping(value = "/editRoom",method = RequestMethod.POST)
+  public Result editRoom(@RequestBody JSONObject jsonObject){
+    return roomService.editRoom(jsonObject);
   }
 }

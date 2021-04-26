@@ -53,7 +53,7 @@ public class HotelServiceImp implements HotelService {
     try {
       Common.uploadFile(file.getBytes(),filePath,fileName);
     } catch (Exception e) {
-    // TODO: handle exception
+      System.out.println(e.getMessage());
     } finally {
       result.setCode(200);
       result.setMessage("操作成功");
@@ -74,10 +74,8 @@ public class HotelServiceImp implements HotelService {
   @Override
   public Result delRoomType(int hid) {
     Result result = new Result();
-
     String name = hotelMapper.queryImgPath(hid).substring(4);
     String fileName = Common.imgPath + "\\" + name;
-
     File file = new File(fileName);
 
     if(file.exists()) {

@@ -7,4 +7,5 @@ public interface RoomService {
   Result getRoom(int page);
   Result addRoom(JSONObject jsonObject);
   Result delRoom(JSONObject jsonObject);
+  Result editRoom(JSONObject jsonObject);
 }

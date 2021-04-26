@@ -53,4 +53,14 @@ public class RoomServiceImp implements RoomService {
     result.setMessage("删除成功");
     return result;
   }
+
+  @Override
+  public Result editRoom(JSONObject jsonObject) {
+    Result result = new Result();
+    Map<String,Object> map = Common.JsonToMap(jsonObject);
+    roomMapper.editRoom(map);
+    result.setMessage("修改成功");
+    result.setCode(200);
+    return result;
+  }
 }

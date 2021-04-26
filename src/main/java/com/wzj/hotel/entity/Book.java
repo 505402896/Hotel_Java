@@ -10,14 +10,16 @@ public class Book {
   private int state;
   private String pIdentity;
   private String pname;
-  private String phoen;
+  private String phone;
   private int money;
   private String htype;
   private int rid;
   private int roomNo;
   private int method;
 
-  public Book(int bid, int uid, int hid, String inDay, String outDay, int days, int state, String pIdentity, String pname, String phoen, int money, String htype, int rid, int roomNo, int method) {
+  public Book(){}
+
+  public Book(int bid, int uid, int hid, String inDay, String outDay, int days, int state, String pIdentity, String pname, String phone, int money, String htype, int rid, int roomNo, int method) {
     this.bid = bid;
     this.uid = uid;
     this.hid = hid;
@@ -27,7 +29,7 @@ public class Book {
     this.state = state;
     this.pIdentity = pIdentity;
     this.pname = pname;
-    this.phoen = phoen;
+    this.phone = phone;
     this.money = money;
     this.htype = htype;
     this.rid = rid;
@@ -107,12 +109,12 @@ public class Book {
     this.pname = pname;
   }
 
-  public String getPhoen() {
-    return phoen;
+  public String getPhone() {
+    return phone;
   }
 
-  public void setPhoen(String phoen) {
-    this.phoen = phoen;
+  public void setPhone(String phoen) {
+    this.phone = phoen;
   }
 
   public int getMoney() {
@@ -167,7 +169,7 @@ public class Book {
             ", state=" + state +
             ", pIdentity='" + pIdentity + '\'' +
             ", pname='" + pname + '\'' +
-            ", phoen='" + phoen + '\'' +
+            ", phone='" + phone + '\'' +
             ", money=" + money +
             ", htype='" + htype + '\'' +
             ", rid=" + rid +

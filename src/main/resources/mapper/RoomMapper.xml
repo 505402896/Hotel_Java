@@ -19,4 +19,7 @@
     <update id="delRoomCol" parameterType="int">
         UPDATE hotel SET total = total - 1 WHERE hid = #{hid}
     </update>
+    <update id="editRoom" parameterType="map">
+        UPDATE room SET hid = #{hid},  htype = #{htype}, roomNo = #{roomNo} WHERE rid = #{rid}
+    </update>
 </mapper>
