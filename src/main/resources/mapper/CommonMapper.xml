@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzj.hotel.mapper.CommonMapper">
-    <select id="login" resultType="com.wzj.hotel.entity.Admin">
-        SELECT * FROM `admin` WHERE `username` = #{username} AND `password` = #{password}
-    </select>
+  <select id="login" resultType="com.wzj.hotel.entity.Admin">
+    SELECT * FROM `admin` WHERE `username` = #{username} AND `password` = #{password}
+   </select>
+  <select id="getWeChatBook" resultType="com.wzj.hotel.entity.Book">
+    SELECT * FROM book WHERE method = 1
+  </select>
+  <select id="getWebBook" resultType="com.wzj.hotel.entity.Book">
+    SELECT * FROM book WHERE method = 2
+  </select>
 </mapper>

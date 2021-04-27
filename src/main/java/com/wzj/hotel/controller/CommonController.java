@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("api/common")
@@ -21,4 +23,8 @@ public class CommonController {
     return commonService.login(username, password);
   }
 
+  @RequestMapping(value = "getDataView",method = RequestMethod.GET)
+  public Map<String,Object> getDataView() {
+    return commonService.getDataView();
+  }
 }
