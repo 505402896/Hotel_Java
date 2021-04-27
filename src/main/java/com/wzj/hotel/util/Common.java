@@ -53,4 +53,8 @@ public class Common {
     out.flush();
     out.close();
   }
+
+  public static int getCurrentPage(int page) {
+    return  (page - 1) * 10;
+  }
 }

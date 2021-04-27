@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzj.hotel.mapper.CommentMapper">
+
+  <select id="getComment" resultType="com.wzj.hotel.entity.Comment" parameterType="int">
+    SELECT * FROM comment limit #{page} , 10
+  </select>
+  <select id="getAllComment" resultType="com.wzj.hotel.entity.Comment">
+    SELECT * FROM comment
+  </select>
+  <select id="getCommented" resultType="com.wzj.hotel.entity.Comment" parameterType="int">
+    SELECT * FROM comment WHERE reply IS NOT NULL limit #{page} , 10
+  </select>
+  <select id="getAllCommented" resultType="com.wzj.hotel.entity.Comment">
+    SELECT * FROM comment WHERE reply IS NOT NULL
+  </select>
+  <select id="getUnComment" resultType="com.wzj.hotel.entity.Comment" parameterType="int">
+    SELECT * FROM comment WHERE reply IS NULL limit #{page} , 10
+  </select>
+  <select id="getAllUnComment" resultType="com.wzj.hotel.entity.Comment">
+    SELECT * FROM comment WHERE reply IS NULL
+  </select>
+  <delete id="delComment" parameterType="int">
+    DELETE FROM comment WHERE cid = #{cid}
+  </delete>
+  <update id="editComment" parameterType="map">
+    UPDATE comment SET reply = #{reply} WHERE cid = #{cid}
+  </update>
+</mapper>

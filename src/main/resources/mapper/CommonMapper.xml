@@ -4,4 +4,10 @@
     <select id="login" resultType="com.wzj.hotel.entity.Admin">
         SELECT * FROM `admin` WHERE `username` = #{username} AND `password` = #{password}
     </select>
+    <select id="getWeChatBook" resultType="com.wzj.hotel.entity.Book">
+    SELECT * FROM book WHERE method = 1
+  </select>
+    <select id="getWebBook" resultType="com.wzj.hotel.entity.Book">
+    SELECT * FROM book WHERE method = 2
+  </select>
 </mapper>
