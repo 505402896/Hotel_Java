@@ -24,7 +24,7 @@ public class BookController {
   }
 
   @RequestMapping(value = "/getBookById",method = RequestMethod.GET)
-  public Result getBookById(@RequestParam(value = "bid") int bid){
+  public Result getBookById(int bid){
     return bookService.getBookById(bid);
   }
 

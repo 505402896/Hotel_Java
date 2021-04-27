@@ -15,6 +15,6 @@
     SELECT * FROM book WHERE bid = #{bid}
   </select>
   <select id="getBookByRealName" resultType="com.wzj.hotel.entity.Book" parameterType="java.lang.String">
-    SELECT * FROM book WHERE realName = #{realName}
+    SELECT * FROM book WHERE pname = #{realName}
   </select>
 </mapper>

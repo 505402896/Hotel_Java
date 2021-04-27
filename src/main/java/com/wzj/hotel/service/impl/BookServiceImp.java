@@ -39,6 +39,7 @@ public class BookServiceImp implements BookService {
 
   @Override
   public Result getBookById(int bid) {
+    System.out.println(bid);
     Result result = new Result();
     List<Book> list = bookMapper.getBookById(bid);
     result.setCode(200);
