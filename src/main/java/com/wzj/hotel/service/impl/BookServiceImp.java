@@ -5,6 +5,7 @@ import com.wzj.hotel.mapper.BookMapper;
 import com.wzj.hotel.service.BookService;
 import com.wzj.hotel.util.Common;
 import com.wzj.hotel.util.Result;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -81,6 +82,24 @@ public class BookServiceImp implements BookService {
     result.setTotal(num.size());
     result.setData(list);
     result.setMessage("查询成功");
+    result.setCode(200);
+    return result;
+  }
+
+  @Override
+  public Result checkIn(JSONObject jsonObject) {
+    Result result = new Result();
+    bookMapper.checkIn(jsonObject.getInt("bid"));
+    result.setMessage("入住成功");
+    result.setCode(200);
+    return result;
+  }
+
+  @Override
+  public Result checkOut(JSONObject jsonObject) {
+    Result result = new Result();
+    bookMapper.checkOut(jsonObject.getInt("bid"));
+    result.setMessage("退房成功");
     result.setCode(200);
     return result;
   }

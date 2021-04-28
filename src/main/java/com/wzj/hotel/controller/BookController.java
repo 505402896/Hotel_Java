@@ -2,6 +2,7 @@ package com.wzj.hotel.controller;
 
 import com.wzj.hotel.service.BookService;
 import com.wzj.hotel.util.Result;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,5 +42,15 @@ public class BookController {
   @RequestMapping(value = "/getInBook",method = RequestMethod.GET)
   public Result getInBook(@RequestParam(value = "page")int page){
     return bookService.getInBook(page);
+  }
+
+  @RequestMapping(value = "/checkIn",method = RequestMethod.POST)
+  public Result checkIn(@RequestBody JSONObject jsonObject) {
+    return bookService.checkIn(jsonObject);
+  }
+
+  @RequestMapping(value = "/checkOut",method = RequestMethod.POST)
+  public Result checkOut(@RequestBody JSONObject jsonObject) {
+    return bookService.checkOut(jsonObject);
   }
 }

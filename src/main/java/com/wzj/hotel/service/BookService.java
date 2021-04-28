@@ -1,6 +1,7 @@
 package com.wzj.hotel.service;
 
 import com.wzj.hotel.util.Result;
+import net.sf.json.JSONObject;
 
 public interface BookService {
   Result getBook(int page);
@@ -9,4 +10,6 @@ public interface BookService {
   Result getBookByRealName(String realName);
   Result getWaitInBook(int page);
   Result getInBook(int page);
+  Result checkIn(JSONObject jsonObject);
+  Result checkOut(JSONObject jsonObject);
 }
