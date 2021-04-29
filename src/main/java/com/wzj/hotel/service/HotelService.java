@@ -1,7 +1,7 @@
 package com.wzj.hotel.service;
 
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSONObject;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 

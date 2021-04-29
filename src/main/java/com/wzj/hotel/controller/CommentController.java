@@ -2,7 +2,7 @@ package com.wzj.hotel.controller;
 
 import com.wzj.hotel.service.CommentService;
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSONObject;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

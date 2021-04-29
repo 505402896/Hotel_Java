@@ -5,8 +5,7 @@ import com.wzj.hotel.mapper.RoomMapper;
 import com.wzj.hotel.service.RoomService;
 import com.wzj.hotel.util.Common;
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSON;
-import net.sf.json.JSONObject;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package com.wzj.hotel.service;
 
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSONObject;
+import org.json.JSONObject;
 
 public interface BookService {
   Result getBook(int page);
