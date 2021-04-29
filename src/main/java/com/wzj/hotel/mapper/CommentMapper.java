@@ -17,5 +17,5 @@ public interface CommentMapper {
   List<Comment> getUnComment(int page);
   List<Comment> getAllUnComment();
   void delComment(int cid);
-  void editComment(Map<String,Object> map);
+  void editComment(Comment comment);
 }

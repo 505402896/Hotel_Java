@@ -61,10 +61,10 @@ public class HotelServiceImp implements HotelService {
   }
 
   @Override
-  public Result editRoomType(JSONObject jsonObject){
+  public Result editRoomType(Hotel hotel){
     Result result = new Result();
-    Map<String,Object> map = Common.JsonToMap(jsonObject);
-    hotelMapper.editRoomType(map);
+    System.out.println(hotel);
+    hotelMapper.editRoomType(hotel);
     result.setMessage("修改成功");
     result.setCode(200);
     return result;
@@ -76,7 +76,6 @@ public class HotelServiceImp implements HotelService {
     String name = hotelMapper.queryImgPath(hid).substring(4);
     String fileName = Common.imgPath + "\\" + name;
     File file = new File(fileName);
-
     if(file.exists()) {
       file.delete();
       hotelMapper.delRoomType(hid);

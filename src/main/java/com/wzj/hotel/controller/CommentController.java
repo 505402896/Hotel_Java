@@ -1,5 +1,6 @@
 package com.wzj.hotel.controller;
 
+import com.wzj.hotel.entity.Comment;
 import com.wzj.hotel.service.CommentService;
 import com.wzj.hotel.util.Result;
 import org.json.JSONObject;
@@ -34,8 +35,8 @@ public class CommentController {
     return commentService.delComment(cid);
   }
 
-  @RequestMapping(value = "/editComment",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-  public Result editComment(@RequestBody JSONObject jsonObject) {
-    return commentService.editComment(jsonObject);
+  @RequestMapping(value = "/editComment",method = RequestMethod.POST)
+  public Result editComment(@RequestBody Comment comment) {
+    return commentService.editComment(comment);
   }
 }

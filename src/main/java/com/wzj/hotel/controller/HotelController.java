@@ -1,5 +1,6 @@
 package com.wzj.hotel.controller;
 
+import com.wzj.hotel.entity.Hotel;
 import com.wzj.hotel.service.HotelService;
 import com.wzj.hotel.util.Result;
 import org.json.JSONObject;
@@ -27,8 +28,8 @@ public class HotelController {
   }
 
   @RequestMapping(value = "/editRoomType",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-  public Result editRoomType(@RequestBody JSONObject jsonObject){
-    return hotelService.editRoomType(jsonObject);
+  public Result editRoomType(@RequestBody Hotel hotel){
+    return hotelService.editRoomType(hotel);
   }
 
   @RequestMapping(value = "/delRoomType/{hid}",method = RequestMethod.DELETE)

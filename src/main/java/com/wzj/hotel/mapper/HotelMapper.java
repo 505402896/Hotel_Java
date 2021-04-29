@@ -15,6 +15,6 @@ public interface HotelMapper {
   List<Hotel> getHotel(int page);
   String queryImgPath(int hid);
   void addRoomType(Map<String,Object> map);
-  void editRoomType(Map<String,Object> map);
+  void editRoomType(Hotel hotel);
   void delRoomType(int hid);
 }

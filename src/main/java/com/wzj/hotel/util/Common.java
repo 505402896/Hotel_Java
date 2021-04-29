@@ -3,8 +3,11 @@ package com.wzj.hotel.util;
 
 import org.json.JSONObject;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -55,7 +58,7 @@ public class Common {
     out.close();
   }
 
-  public static int getCurrentPage(int page) {
+    public static int getCurrentPage(int page) {
     return  (page - 1) * 10;
   }
 }

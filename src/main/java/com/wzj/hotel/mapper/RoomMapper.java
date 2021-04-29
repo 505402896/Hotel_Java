@@ -13,9 +13,9 @@ import java.util.Map;
 public interface RoomMapper {
   List<Room> getRoom(int page);
   List<Room> getAllRoom();
-  void addRoom(Map<String,Object> map);
+  void addRoom(Room room);
   void delRoom(int rid);
-  void editRoom(Map<String,Object> map);
+  void editRoom(Room room);
   void addRoomCol(int hid);
   void delRoomCol(int hid);
 }

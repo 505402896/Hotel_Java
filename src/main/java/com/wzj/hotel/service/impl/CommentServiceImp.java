@@ -65,12 +65,11 @@ public class CommentServiceImp implements CommentService {
   }
 
   @Override
-  public Result editComment(JSONObject jsonObject) {
+  public Result editComment(Comment comment) {
     Result result = new Result();
-    Map<String,Object> map = Common.JsonToMap(jsonObject);
-    commentMapper.editComment(map);
+    commentMapper.editComment(comment);
     result.setCode(200);
-    result.setMessage("编辑成功");
+    result.setMessage("回复成功");
     return result;
   }
 }
