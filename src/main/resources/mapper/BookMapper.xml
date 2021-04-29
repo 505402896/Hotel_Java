@@ -29,10 +29,10 @@
   <select id="getAllInBook" resultType="com.wzj.hotel.entity.Book">
     SELECT * FROM book WHERE state = 1
   </select>
-  <update id="checkIn" parameterType="int">
+  <update id="checkIn" parameterType="com.wzj.hotel.entity.Book">
     UPDATE book SET state = 1 WHERE bid = #{bid}
   </update>
-  <update id="checkOut" parameterType="int">
+  <update id="checkOut" parameterType="com.wzj.hotel.entity.Book">
     UPDATE book SET state = 2 WHERE bid = #{bid}
   </update>
 </mapper>

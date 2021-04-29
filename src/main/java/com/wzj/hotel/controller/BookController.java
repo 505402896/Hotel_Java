@@ -1,5 +1,6 @@
 package com.wzj.hotel.controller;
 
+import com.wzj.hotel.entity.Book;
 import com.wzj.hotel.service.BookService;
 import com.wzj.hotel.util.Result;
 import org.json.JSONObject;
@@ -45,12 +46,12 @@ public class BookController {
   }
 
   @RequestMapping(value = "/checkIn",method = RequestMethod.POST)
-  public Result checkIn(@RequestBody JSONObject jsonObject) {
-    return bookService.checkIn(jsonObject);
+  public Result checkIn(@RequestBody Book book) {
+    return bookService.checkIn(book);
   }
 
   @RequestMapping(value = "/checkOut",method = RequestMethod.POST)
-  public Result checkOut(@RequestBody JSONObject jsonObject) {
-    return bookService.checkOut(jsonObject);
+  public Result checkOut(@RequestBody Book book) {
+    return bookService.checkOut(book);
   }
 }

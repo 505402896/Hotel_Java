@@ -86,18 +86,18 @@ public class BookServiceImp implements BookService {
   }
 
   @Override
-  public Result checkIn(JSONObject jsonObject) {
+  public Result checkIn(Book book) {
     Result result = new Result();
-    bookMapper.checkIn(jsonObject.getInt("bid"));
+    bookMapper.checkIn(book.getBid());
     result.setMessage("入住成功");
     result.setCode(200);
     return result;
   }
 
   @Override
-  public Result checkOut(JSONObject jsonObject) {
+  public Result checkOut(Book book) {
     Result result = new Result();
-    bookMapper.checkOut(jsonObject.getInt("bid"));
+    bookMapper.checkOut(book.getBid());
     result.setMessage("退房成功");
     result.setCode(200);
     return result;
