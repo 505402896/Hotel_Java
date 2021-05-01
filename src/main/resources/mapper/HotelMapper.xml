@@ -11,7 +11,7 @@
     <insert id="addRoomType" parameterType="map">
         INSERT INTO hotel VALUES(null,#{htype},#{hprice},#{hpic},#{hdetail},#{peopleNum},0)
     </insert>
-    <update id="editRoomType" parameterType="map">
+    <update id="editRoomType" parameterType="com.wzj.hotel.entity.Hotel">
         UPDATE hotel SET htype = #{htype},  hprice = #{hprice}, peopleNum = #{peopleNum} WHERE hid = #{hid}
     </update>
     <delete id="delRoomType" parameterType="int">

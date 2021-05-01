@@ -3,15 +3,11 @@ package com.wzj.hotel.service.impl;
 import com.wzj.hotel.entity.Room;
 import com.wzj.hotel.mapper.RoomMapper;
 import com.wzj.hotel.service.RoomService;
-import com.wzj.hotel.util.Common;
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSON;
-import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service("RoomService")
 public class RoomServiceImp implements RoomService {
@@ -32,21 +28,21 @@ public class RoomServiceImp implements RoomService {
   }
 
   @Override
-  public Result addRoom(JSONObject jsonObject) {
+  public Result addRoom(Room room) {
     Result result = new Result();
-    Map<String,Object> map = Common.JsonToMap(jsonObject);
-    roomMapper.addRoom(map);
-    roomMapper.addRoomCol(jsonObject.getInt("hid"));
+//    Map<String,Object> map = Common.JsonToMap(jsonObject);
+    roomMapper.addRoom(room);
+    roomMapper.addRoomCol(room.getHid());
     result.setCode(200);
     result.setMessage("增加成功");
     return result;
   }
 
   @Override
-  public Result delRoom(JSONObject jsonObject) {
+  public Result delRoom(Room room) {
     Result result = new Result();
-    int hid = jsonObject.getInt("hid");
-    int rid = jsonObject.getInt("rid");
+    int hid = room.getHid();
+    int rid = room.getRid();
     roomMapper.delRoomCol(hid);
     roomMapper.delRoom(rid);
     result.setCode(200);
@@ -55,10 +51,9 @@ public class RoomServiceImp implements RoomService {
   }
 
   @Override
-  public Result editRoom(JSONObject jsonObject) {
+  public Result editRoom(Room room) {
     Result result = new Result();
-    Map<String,Object> map = Common.JsonToMap(jsonObject);
-    roomMapper.editRoom(map);
+    roomMapper.editRoom(room);
     result.setMessage("修改成功");
     result.setCode(200);
     return result;

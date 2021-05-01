@@ -1,6 +1,5 @@
 package com.wzj.hotel.service.impl;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.wzj.hotel.entity.UserInfo;
 import com.wzj.hotel.mapper.UserInfoMapper;
 import com.wzj.hotel.service.UserInfoService;
@@ -8,9 +7,7 @@ import com.wzj.hotel.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service("UserInfoService")
 public class UserInfoServiceImp implements UserInfoService {

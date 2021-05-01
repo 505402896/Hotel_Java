@@ -6,6 +6,7 @@ import com.wzj.hotel.entity.Room;
 import com.wzj.hotel.entity.UserInfo;
 import com.wzj.hotel.mapper.*;
 import com.wzj.hotel.service.CommonService;
+import com.wzj.hotel.service.UserInfoService;
 import com.wzj.hotel.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

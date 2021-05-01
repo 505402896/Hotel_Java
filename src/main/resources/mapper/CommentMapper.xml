@@ -23,7 +23,7 @@
   <delete id="delComment" parameterType="int">
     DELETE FROM comment WHERE cid = #{cid}
   </delete>
-  <update id="editComment" parameterType="map">
+  <update id="editComment" parameterType="com.wzj.hotel.entity.Comment">
     UPDATE comment SET reply = #{reply} WHERE cid = #{cid}
   </update>
 </mapper>

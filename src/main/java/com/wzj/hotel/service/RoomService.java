@@ -1,11 +1,12 @@
 package com.wzj.hotel.service;
 
+import com.wzj.hotel.entity.Room;
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSONObject;
+import org.json.JSONObject;
 
 public interface RoomService {
   Result getRoom(int page);
-  Result addRoom(JSONObject jsonObject);
-  Result delRoom(JSONObject jsonObject);
-  Result editRoom(JSONObject jsonObject);
+  Result addRoom(Room room);
+  Result delRoom(Room room);
+  Result editRoom(Room room);
 }

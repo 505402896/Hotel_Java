@@ -1,9 +1,9 @@
 package com.wzj.hotel.controller;
 
+import com.wzj.hotel.entity.Hotel;
 import com.wzj.hotel.service.HotelService;
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSON;
-import net.sf.json.JSONObject;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,8 +28,8 @@ public class HotelController {
   }
 
   @RequestMapping(value = "/editRoomType",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-  public Result editRoomType(@RequestBody JSONObject jsonObject){
-    return hotelService.editRoomType(jsonObject);
+  public Result editRoomType(@RequestBody Hotel hotel){
+    return hotelService.editRoomType(hotel);
   }
 
   @RequestMapping(value = "/delRoomType/{hid}",method = RequestMethod.DELETE)

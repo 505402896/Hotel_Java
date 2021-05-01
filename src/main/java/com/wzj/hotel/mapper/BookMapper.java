@@ -13,5 +13,11 @@ public interface BookMapper {
   List<Book> getAllBook();
   List<Book> getBookById(int bid);
   List<Book> getBookByRealName(String realName);
+  List<Book> getWaitInBook(int page);
+  List<Book> getAllWaitInBook();
+  List<Book> getInBook(int page);
+  List<Book> getAllInBook();
+  void checkIn(int bid);
+  void checkOut(int bid);
   void delBook(int bid);
 }

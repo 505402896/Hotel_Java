@@ -11,7 +11,7 @@ import java.util.Map;
 @Mapper
 @Repository
 public interface CommonMapper {
-  Admin login(String username,String password);
+  Admin login(String username, String password);
   List<Book> getWeChatBook();
   List<Book> getWebBook();
 }

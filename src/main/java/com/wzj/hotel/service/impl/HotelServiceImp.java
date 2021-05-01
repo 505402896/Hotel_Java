@@ -5,15 +5,11 @@ import com.wzj.hotel.mapper.HotelMapper;
 import com.wzj.hotel.service.HotelService;
 import com.wzj.hotel.util.Common;
 import com.wzj.hotel.util.Result;
-import net.sf.json.JSON;
-import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.rmi.CORBA.Util;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
@@ -62,10 +58,10 @@ public class HotelServiceImp implements HotelService {
   }
 
   @Override
-  public Result editRoomType(JSONObject jsonObject){
+  public Result editRoomType(Hotel hotel){
     Result result = new Result();
-    Map<String,Object> map = Common.JsonToMap(jsonObject);
-    hotelMapper.editRoomType(map);
+    System.out.println(hotel);
+    hotelMapper.editRoomType(hotel);
     result.setMessage("修改成功");
     result.setCode(200);
     return result;
@@ -77,7 +73,6 @@ public class HotelServiceImp implements HotelService {
     String name = hotelMapper.queryImgPath(hid).substring(4);
     String fileName = Common.imgPath + "\\" + name;
     File file = new File(fileName);
-
     if(file.exists()) {
       file.delete();
       hotelMapper.delRoomType(hid);
