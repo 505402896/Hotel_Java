@@ -97,8 +97,24 @@ public class BookServiceImp implements BookService {
   @Override
   public Result checkOut(Book book) {
     Result result = new Result();
-    bookMapper.checkOut(book.getBid());
+    bookMapper.checkOut(book);
     result.setMessage("退房成功");
+    result.setCode(200);
+    return result;
+  }
+
+  @Override
+  public Result editBook(Book book) {
+    Result result = new Result();
+    if(book.getOutDay() == null) {
+//      改房型
+      bookMapper.changeType(book);
+      result.setMessage("更改成功");
+    } else {
+//      续住
+      bookMapper.changeOutDay(book);
+      result.setMessage("续住成功");
+    }
     result.setCode(200);
     return result;
   }

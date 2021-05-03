@@ -9,16 +9,16 @@
     SELECT * FROM comment
   </select>
   <select id="getCommented" resultType="com.wzj.hotel.entity.Comment" parameterType="int">
-    SELECT * FROM comment WHERE reply IS NOT NULL limit #{page} , 10
+    SELECT * FROM comment WHERE reply != "" limit #{page} , 10
   </select>
   <select id="getAllCommented" resultType="com.wzj.hotel.entity.Comment">
-    SELECT * FROM comment WHERE reply IS NOT NULL
+    SELECT * FROM comment WHERE reply != ""
   </select>
   <select id="getUnComment" resultType="com.wzj.hotel.entity.Comment" parameterType="int">
-    SELECT * FROM comment WHERE reply IS NULL limit #{page} , 10
+    SELECT * FROM comment WHERE reply = "" limit #{page} , 10
   </select>
   <select id="getAllUnComment" resultType="com.wzj.hotel.entity.Comment">
-    SELECT * FROM comment WHERE reply IS NULL
+    SELECT * FROM comment WHERE reply = ""
   </select>
   <delete id="delComment" parameterType="int">
     DELETE FROM comment WHERE cid = #{cid}

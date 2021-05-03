@@ -22,4 +22,7 @@
     <update id="editRoom" parameterType="com.wzj.hotel.entity.Room">
         UPDATE room SET hid = #{hid},  htype = #{htype}, roomNo = #{roomNo} WHERE rid = #{rid}
     </update>
+    <select id="getRoomById" resultType="com.wzj.hotel.entity.Room" parameterType="int">
+        SELECT * FROM room WHERE rid = #{rid}
+    </select>
 </mapper>

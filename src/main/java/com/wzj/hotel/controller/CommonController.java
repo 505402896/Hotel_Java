@@ -27,4 +27,9 @@ public class CommonController {
   public Map<String,Object> getDataView() {
     return commonService.getDataView();
   }
+
+  @RequestMapping(value = "getAllRoomType",method = RequestMethod.GET)
+  public Result getAllRoomType() {
+    return commonService.getAllRoomType();
+  }
 }

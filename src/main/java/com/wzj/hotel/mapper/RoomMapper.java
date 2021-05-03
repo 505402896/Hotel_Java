@@ -13,6 +13,7 @@ import java.util.Map;
 public interface RoomMapper {
   List<Room> getRoom(int page);
   List<Room> getAllRoom();
+  Room getRoomById(int rid);
   void addRoom(Room room);
   void delRoom(int rid);
   void editRoom(Room room);

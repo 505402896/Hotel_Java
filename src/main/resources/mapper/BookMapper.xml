@@ -33,6 +33,12 @@
     UPDATE book SET state = 1 WHERE bid = #{bid}
   </update>
   <update id="checkOut" parameterType="com.wzj.hotel.entity.Book">
-    UPDATE book SET state = 2 WHERE bid = #{bid}
+    UPDATE book SET state = 2, outDay = #{outDay} WHERE bid = #{bid}
+  </update>
+  <update id="changeOutDay" parameterType="com.wzj.hotel.entity.Book">
+    UPDATE book SET state = 1,outDay = #{outDay} WHERE bid = #{bid}
+  </update>
+  <update id="changeType" parameterType="com.wzj.hotel.entity.Book">
+    UPDATE book SET state = 1, hid = #{hid}, htype = #{htype} WHERE bid = #{bid}
   </update>
 </mapper>

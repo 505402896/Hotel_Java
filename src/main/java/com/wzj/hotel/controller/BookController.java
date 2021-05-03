@@ -54,4 +54,9 @@ public class BookController {
   public Result checkOut(@RequestBody Book book) {
     return bookService.checkOut(book);
   }
+
+  @RequestMapping(value = "/editBook",method = RequestMethod.POST)
+  public Result editBook(@RequestBody Book book) {
+    return bookService.editBook(book);
+  }
 }

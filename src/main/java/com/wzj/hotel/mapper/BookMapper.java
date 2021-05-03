@@ -18,6 +18,8 @@ public interface BookMapper {
   List<Book> getInBook(int page);
   List<Book> getAllInBook();
   void checkIn(int bid);
-  void checkOut(int bid);
+  void checkOut(Book book);
   void delBook(int bid);
+  void changeOutDay(Book book);
+  void changeType(Book book);
 }

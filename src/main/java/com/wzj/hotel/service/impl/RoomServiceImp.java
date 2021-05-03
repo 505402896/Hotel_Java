@@ -53,7 +53,12 @@ public class RoomServiceImp implements RoomService {
   @Override
   public Result editRoom(Room room) {
     Result result = new Result();
+    Room oldRoom = roomMapper.getRoomById(room.getRid());
+    int oldHid = oldRoom.getHid();
+    roomMapper.delRoomCol(oldHid);
+    int newHid = room.getHid();
     roomMapper.editRoom(room);
+    roomMapper.addRoomCol(newHid);
     result.setMessage("修改成功");
     result.setCode(200);
     return result;

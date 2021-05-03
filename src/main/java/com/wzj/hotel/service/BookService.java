@@ -13,4 +13,5 @@ public interface BookService {
   Result getInBook(int page);
   Result checkIn(Book book);
   Result checkOut(Book book);
+  Result editBook(Book book);
 }

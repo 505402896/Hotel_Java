@@ -61,4 +61,14 @@ public class CommonServiceImp implements CommonService {
     map.put("book",book);
     return map;
   }
+
+  @Override
+  public Result getAllRoomType() {
+    Result result = new Result();
+    List<Hotel> list = hotelMapper.getAllHotel();
+    result.setCode(200);
+    result.setMessage("查询成功");
+    result.setData(list);
+    return result;
+  }
 }
