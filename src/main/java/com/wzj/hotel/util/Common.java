@@ -1,6 +1,7 @@
 package com.wzj.hotel.util;
 
-import net.sf.json.JSONObject;
+
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -11,7 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Common {
-  public static final String imgPath = "C:\\Users\\50540\\eclipse-workspace\\Hotel\\WebContent\\img";
+  public static final String imgPath = "C:\\ftp\\apache-tomcat-9.0.41\\webapps\\assets\\hotel\\img";
 //  JSON转Map
   public static Map<String,Object> JsonToMap(JSONObject j){
     Map<String,Object> map = new HashMap<>();
