@@ -1,20 +1,28 @@
 package com.wzj.hotel.service.impl;
 
 import com.wzj.hotel.entity.Book;
+import com.wzj.hotel.entity.Room;
 import com.wzj.hotel.mapper.BookMapper;
+import com.wzj.hotel.mapper.RoomMapper;
 import com.wzj.hotel.service.BookService;
 import com.wzj.hotel.util.Common;
 import com.wzj.hotel.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service("BookService")
 public class BookServiceImp implements BookService {
 
   @Autowired
   private BookMapper bookMapper;
+
+  @Autowired
+  private RoomMapper roomMapper;
 
   @Override
   public Result getBook(int page) {
@@ -64,10 +72,14 @@ public class BookServiceImp implements BookService {
     Result result = new Result();
     int currentPage = Common.getCurrentPage(page);
     List<Book> list = bookMapper.getWaitInBook(currentPage);
+    Map<String, Object> map = new HashMap<>();
+    map.put("data", list);
+    List<Room> room = roomMapper.getAllRoom();
+    map.put("room", room);
     List<Book> num = bookMapper.getAllWaitInBook();
     result.setCode(200);
     result.setMessage("查询成功");
-    result.setData(list);
+    result.setData(map);
     result.setTotal(num.size());
     return result;
   }
@@ -88,7 +100,7 @@ public class BookServiceImp implements BookService {
   @Override
   public Result checkIn(Book book) {
     Result result = new Result();
-    bookMapper.checkIn(book.getBid());
+    bookMapper.checkIn(book);
     result.setMessage("入住成功");
     result.setCode(200);
     return result;

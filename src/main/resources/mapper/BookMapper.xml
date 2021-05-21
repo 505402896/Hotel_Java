@@ -30,7 +30,7 @@
     SELECT * FROM book WHERE state = 1
   </select>
   <update id="checkIn" parameterType="com.wzj.hotel.entity.Book">
-    UPDATE book SET state = 1 WHERE bid = #{bid}
+    UPDATE book SET state = 1, roomNo = #{roomNo}, rid = #{rid} WHERE bid = #{bid}
   </update>
   <update id="checkOut" parameterType="com.wzj.hotel.entity.Book">
     UPDATE book SET state = 2, outDay = #{outDay} WHERE bid = #{bid}

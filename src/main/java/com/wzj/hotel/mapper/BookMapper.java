@@ -17,7 +17,7 @@ public interface BookMapper {
   List<Book> getAllWaitInBook();
   List<Book> getInBook(int page);
   List<Book> getAllInBook();
-  void checkIn(int bid);
+  void checkIn(Book book);
   void checkOut(Book book);
   void delBook(int bid);
   void changeOutDay(Book book);
